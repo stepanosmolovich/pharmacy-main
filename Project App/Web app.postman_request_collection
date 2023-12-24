@@ -1,0 +1,184 @@
+{
+	"info": {
+		"_postman_id": "6d054f8a-55f8-4f73-9daa-c5d6f50c9c2e",
+		"name": "Web app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "24141848"
+	},
+	"item": [
+		{
+			"name": "Medication request",
+			"item": [
+				{
+					"name": "Get medication by Id",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "List Medications",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/medications"
+					},
+					"response": []
+				},
+				{
+					"name": "Medication add",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"manufacturer\":\"Ukraine1\",\r\n    \"name\":\"Calcium D1\",\r\n    \"dosage\":10.0,\r\n    \"manufactureDate\":\"2023-03-03\", \r\n    \"shelfLife\":\"2025-03-03\", \r\n    \"quantity\":10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/medications/add"
+					},
+					"response": []
+				},
+				{
+					"name": "Medication delet",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:8080/medications/delete/3"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sale request",
+			"item": [
+				{
+					"name": "List Sales",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/sales"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Sale by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/sales/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Sale add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quantity\":10,\r\n    \"pharmacistId\":3,\r\n    \"medicationId\":2\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/sales/add"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pharmacist request",
+			"item": [
+				{
+					"name": "Get  Pharmacist by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/pharmacists/id/2"
+					},
+					"response": []
+				},
+				{
+					"name": "List Pharmacists",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/pharmacists"
+					},
+					"response": []
+				},
+				{
+					"name": "Pharmacist add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"first_name3\",\r\n    \"lastName\":\"last_name3\",\r\n    \"passportId\":\"a333\",\r\n    \"salesCount\":33,\r\n    \"experience\":3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/pharmacists/add"
+					},
+					"response": []
+				},
+				{
+					"name": "Pharmacist delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:8080/pharmacists/delete/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Statistic request",
+			"item": [
+				{
+					"name": "Get MedicationStatistics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/statistic"
+					},
+					"response": []
+				},
+				{
+					"name": "Get totalQuantitySold",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/totalQuantitySold"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
